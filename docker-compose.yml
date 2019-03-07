@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    build: .
+    volumes:
+      - ./src/flashcards/:/app
+    environment: 
+      DB_PASSWORD: ElPolloDiablo!
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ItWasTheBestOfTimes
+      MYSQL_USER: flashcards
+      MYSQL_PASSWORD: ElPolloDiablo!
+      MYSQL_DATABASE: flashcards
