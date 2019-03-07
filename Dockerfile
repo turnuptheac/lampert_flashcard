@@ -8,4 +8,4 @@ ADD src/flashcards/requirements.txt /app/
 RUN pip install -r requirements.txt
 ADD src/flashcards/ /app/
 
-CMD python manage.py makemigrations && python manage.py makemigrations flashcards && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000
+CMD python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000
