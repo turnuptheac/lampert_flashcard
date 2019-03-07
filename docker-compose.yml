@@ -6,6 +6,7 @@ services:
       - ./src/flashcards/:/app
     environment: 
       DB_PASSWORD: ElPolloDiablo!
+      DEBUG: 'true'
     ports:
       - "8000:8000"
     depends_on:

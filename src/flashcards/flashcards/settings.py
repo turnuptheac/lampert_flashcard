@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xa=m53sx@^9#i0kzmqg-#7&@2#ui8p^wlw@^%e2u74x-!r+fuu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'false').lower() == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flashcards.stephenmann.io','localhost']
 
 
 # Application definition
