@@ -1,0 +1,13 @@
+<div class="flashcard flashcard-edit">
+  <form method="POST" action="{% url 'cards:update' card.id %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="button">Save</button>
+  </form>
+  {% spaceless %}
+  <span class="bucket">{{ card.bucket_number }}</span>
+  <span class="failures">
+    {% for _ in ''|center:card.failure_count %}&#10006;{% empty %}&nbsp;{% endfor %}
+  </span>
+  {% endspaceless %}
+</div>

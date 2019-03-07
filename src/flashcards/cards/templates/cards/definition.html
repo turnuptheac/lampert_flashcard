@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% block body %}
+<div class="app-review">
+  {% if card %}
+  <div class="flashcard flashcard-large flashcard-back">
+    <span>{{ card.word }}</span>
+    <p>{{ card.definition }}</p>
+  </div>
+  <form method="POST" action="{% url 'cards:guess_incorrectly' %}">
+    {% csrf_token %}
+    <button class="button button-negative">I didn't get it.</button>
+  </form>
+  <form method="POST" action="{% url 'cards:guess_correctly' %}">
+    {% csrf_token %}
+    <button class="button">I got it.</button>
+  </form>
+  {% endif %}
+</div>
+{% endblock %}

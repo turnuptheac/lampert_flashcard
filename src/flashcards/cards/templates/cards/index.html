@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+
+{% block body %}
+<div class="app-review">
+  {% if card %}
+    <div class="flashcard flashcard-large flashcard-front">
+      <span>{{ card.word }}</span>
+    </div>
+    <a class="button" href="{% url 'cards:definition' %}">Show the definition.</a>
+  {% elif has_pending_cards %}
+    <h2>You are temporarily done; please come back later to review more words.</h2>
+  {% elif has_any_cards %}
+    <h2>You have no more words to review; you are permanently done!</h2>
+  {% else %}
+    <h2>You haven't created any cards; click <a href="{% url 'cards:list' %}">manage</a> to begin.</h2>
+  {% endif %}
+</div>
+{% endblock %}

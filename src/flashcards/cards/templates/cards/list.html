@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block body %}
+<div class="app-manage">
+  {% if should_show_search %}
+  <form class="search-form" method="GET" action="{% url 'cards:list' %}">
+    <button class="button" type="submit" autofocus>Search</button>
+    <input type="text" name="q" value="{{ starts_with }}" placeholder="Search for word..." />
+  </form>
+  {% endif %}
+  <div class="flashcard-list">
+    <div class="flashcard flashcard-edit">
+      <form method="POST" action="{% url 'cards:create' %}">
+        {% csrf_token %}
+        {{ create_form }}
+        <button type="submit" class="button">Create</button>
+      </form>
+      {% spaceless %}
+      <span class="bucket">0</span>
+      <span class="failures">&nbsp;</span>
+      {% endspaceless %}
+    </div>
+    {% for result in results %}
+      {% include 'cards/_card_form.html' with card=result.card form=result.form %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -13,12 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include, url
-from django.contrib import admin
-from django.conf import settings
-from django.conf.urls.static import static
+from django.conf.urls import url
 
+from . import views
+
+app_name = 'cards'
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('cards.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    url(r'^$', views.index, name='index'),
+    url(r'^flashcard$', views.list, name='list'),
+    url(r'^flashcard/definition$', views.definition, name='definition'),
+    url(r'^flashcard/create$', views.create, name='create'),
+    url(r'^flashcard/update/(?P<card_id>.+)$', views.update, name='update'),
+    url(r'^flashcard/guess/correct$', views.guess_correctly, name='guess_correctly'),
+    url(r'^flashcard/guess/incorrect$', views.guess_incorrectly, name='guess_incorrectly'),
+]

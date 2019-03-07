@@ -31,7 +31,7 @@ ALLOWED_HOSTS = ['flashcards.stephenmann.io','localhost']
 # Application definition
 
 INSTALLED_APPS = [
-    'flashcards',
+    'cards.apps.CardsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

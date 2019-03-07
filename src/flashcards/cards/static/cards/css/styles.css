@@ -7,6 +7,15 @@ html,body {
   box-sizing: border-box;
 }
 
+h2 {
+  padding: 1em 2em;
+  font-size: 1.2em;
+  max-width: 24em;
+  margin: 0 auto;
+  line-height: 1.5em;
+  color: rgba(64,64,0,0.8);
+}
+
 .container {
   margin: 0 auto;
   padding: 0 1em;
@@ -50,7 +59,6 @@ html,body {
 
 .flashcard {
   position: relative;
-  overflow: auto;
   border: 1px solid #eee;
   background-color: #fff;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
@@ -89,10 +97,14 @@ html,body {
   height: 10em;
 }
 
-.flashcard.flashcard-edit, .flashcard.flashcard-add {
+.flashcard.flashcard-edit {
   line-height: 1em;
   padding: 1em;
   text-align: left;
+}
+
+.flashcard.flashcard-edit label {
+  display: none;
 }
 
 .button {
@@ -108,24 +120,23 @@ html,body {
   border-top: 2pt solid #4b9;
   text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
   cursor: pointer;
-  
-  transition: all 0.2s;
 }
 
 .button:hover {
   background-color: #5ca;
   border-top: 2pt solid #5ca;
+  transition: background-color 0.2s, border-top 0.2s, border-bottom 0.2s;
 }
 
 .button.button-negative {
-  border-top: 2pt solid #a99;
-  background-color: #a99;
-  border-bottom: 2pt solid #9f8f90;
+  border-top: 2pt solid #a79;
+  background-color: #a79;
+  border-bottom: 2pt solid #9f6f90;
 }
 
 .button.button-negative:hover {
-  border-top: 2pt solid #baa;
-  background-color: #baa;
+  border-top: 2pt solid #b8a;
+  background-color: #b8a;
 }
 
 .app-review {
@@ -145,7 +156,7 @@ html,body {
 }
 
 .app-manage > .flashcard-list {
-  margin: 0 auto;
+  margin: 1em auto 0 auto;
   text-align: center;
   min-width: 0em;
   max-width: 52em;
@@ -154,6 +165,38 @@ html,body {
 .app-manage > .flashcard-list > .flashcard {
   display: inline-block;
   margin-bottom: 1em;
+}
+
+.app-review form {
+  display: inline-block;
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+.app-review form .button {
+  font-size: 1em;
+}
+
+.search-form {
+  display: block;
+  max-width: 24em;
+  margin: 1em auto;
+}
+
+.search-form input {
+  padding: 0.3em;
+  border: 1px solid #eee;
+  font-size: 1em;
+  display: block;
+  width: 80%;
+  margin-right: 6em;
+}
+
+.search-form button {
+  display: block;
+  margin-top: 1px;
+  width: 19%;
+  float: right;
 }
 
 .flashcard.flashcard-edit input {
@@ -175,7 +218,7 @@ html,body {
   resize: none;
 }
 
-.flashcard.flashcard-edit button {
+.flashcard.flashcard-edit .button {
   float: right;
   margin-top: 1em;
   line-height: 1em;
