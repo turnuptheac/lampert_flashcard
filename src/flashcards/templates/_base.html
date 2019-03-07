@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Flash Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'flashcards/css/reset.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'flashcards/css/styles.css' %}" />
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <a href="/flashcard">Manage</a>
+        <h1><a href="/">Flashcards</a></h1>
+      </header>
+      {% block body %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

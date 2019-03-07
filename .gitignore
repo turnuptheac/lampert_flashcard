@@ -90,3 +90,6 @@ ENV/
 
 # MySQL data
 data/
+
+# Deployment settings
+deployment/

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['flashcards.stephenmann.io','localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    'flashcards',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'flashcards.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +80,7 @@ DATABASES = {
         'NAME': 'flashcards',
         'USER': 'flashcards',
         'PASSWORD': os.environ.get('DB_PASSWORD', ''),
-        'HOST': 'db',   # Or an IP Address that your DB is hosted on
+        'HOST': 'flashcards-db',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
@@ -122,3 +123,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'

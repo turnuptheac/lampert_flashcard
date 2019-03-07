@@ -1,0 +1,205 @@
+html,body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fffff5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.container > header {
+  text-align: left;
+  max-width: 24em;
+  margin: 0 auto;
+}
+
+.container > header > h1 {
+  display: block;
+  margin: 0.5em 0;
+  text-transform: lowercase;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+}
+
+.container > header > h1 > a {
+  color: rgba(64,64,0,0.3);
+  text-decoration: none;
+}
+
+.container > header > h1 > a:hover {
+  color: rgba(64,64,0,0.65);
+}
+
+.container > header > a {
+  display: block;
+  text-transform: lowercase;
+  color: rgba(64,64,0,0.3);
+  font-size: 1em;
+  line-height: 1.5em;
+  float: right;
+}
+
+.container > header > a:hover {
+  color: rgba(64,64,0,0.65);
+}
+
+.flashcard {
+  position: relative;
+  overflow: auto;
+  border: 1px solid #eee;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 12em;
+  color: #440;
+  border-radius: 3px;
+  max-width: 24em;
+  cursor: default;
+}
+
+.flashcard.flashcard-front {
+  line-height: 12em;
+  text-align: center;
+}
+
+.flashcard.flashcard-front > span {
+  font-size: 1.5em;
+}
+
+.flashcard.flashcard-back {
+  line-height: 1em;
+  padding: 1em;
+  text-align: left;
+}
+
+.flashcard.flashcard-back > span {
+  opacity: 0.5;
+}
+
+.flashcard.flashcard-back > p {
+  padding: 1em;
+  line-height: 2em;
+  display: table-cell;
+  vertical-align: middle;
+  height: 10em;
+}
+
+.flashcard.flashcard-edit, .flashcard.flashcard-add {
+  line-height: 1em;
+  padding: 1em;
+  text-align: left;
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  background-color: #4b9;
+  border: none;
+  outline: none;
+  border-bottom: 2pt solid rgba(64,176,154,0.5);
+  border-top: 2pt solid #4b9;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+  cursor: pointer;
+  
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: #5ca;
+  border-top: 2pt solid #5ca;
+}
+
+.button.button-negative {
+  border-top: 2pt solid #a99;
+  background-color: #a99;
+  border-bottom: 2pt solid #9f8f90;
+}
+
+.button.button-negative:hover {
+  border-top: 2pt solid #baa;
+  background-color: #baa;
+}
+
+.app-review {
+  text-align: center;
+}
+
+.app-review > .flashcard {
+  margin: 0 auto;
+}
+
+.app-review > .button {
+  margin: 1em auto;
+}
+
+.app-manage {
+  text-align: center;
+}
+
+.app-manage > .flashcard-list {
+  margin: 0 auto;
+  text-align: center;
+  min-width: 0em;
+  max-width: 52em;
+}
+
+.app-manage > .flashcard-list > .flashcard {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.flashcard.flashcard-edit input {
+  display: block;
+  width: 100%;
+  padding: 0.3em;
+  border: 1px solid #eee;
+  font-size: 1em;
+}
+
+.flashcard.flashcard-edit textarea {
+  display: block;
+  margin-top: 1em;
+  width: 100%;
+  padding: 0.3em;
+  border: 1px solid #eee;
+  font-size: 1em;
+  height: 5em;
+  resize: none;
+}
+
+.flashcard.flashcard-edit button {
+  float: right;
+  margin-top: 1em;
+  line-height: 1em;
+}
+
+.flashcard.flashcard-edit > .failures {
+  display: inline-block;
+  letter-spacing: 0.2em;
+  margin-top: 1em;
+  line-height: 1em;
+  color: rgba(64,0,0,0.5);
+  cursor: default;
+}
+
+.flashcard.flashcard-edit > .bucket {
+  display: inline-block;
+  margin-top: 1em;
+  line-height: 1.5em;
+  margin: -0.25em 0;
+  margin-right: 0.8em;
+  width: 1.8em;
+  text-align: center;
+  color: white;
+  background-color: rgba(64,0,0,0.5);
+  border-radius: 0 0 0.5em 0.5em;
+  cursor: default;
+}
